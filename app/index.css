@@ -1,0 +1,13 @@
+.dashboard_list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  border: solid;
+}
+
+.dashboard_list li {
+  padding: 5px;
+  margin: 5px 10px 5px 10px;
+  border: solid;
+}
