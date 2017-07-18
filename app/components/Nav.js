@@ -1,16 +1,34 @@
 var React = require('react');
+var NavLink = require('react-router-dom').NavLink;
 
 class Nav extends React.Component {
   render () {
-    var dashboard_options = ["Audits", "Leaderboards", "Calendar"];
     return (
       <div>
         <ul className="dashboard_list">
-          {dashboard_options.map(function(option) {
-            return (
-              <li key={option}>{option}</li>
-            )
-          })}
+          <li>
+            <NavLink exact activeClassName='active' to='/'>
+              Home
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink activeClassName='active' to='/audits'>
+              Audits
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink activeClassName='active' to='/leaders'>
+              Leaders
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink activeClassName='active' to='/calendar'>
+              Calendar
+            </NavLink>
+          </li>
         </ul>
       </div>
     )

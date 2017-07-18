@@ -1,28 +1,26 @@
 var React = require('react');
+var ReactRouter = require('react-router-dom');
+var Router = ReactRouter.BrowserRouter;
+var Route = ReactRouter.Route;
+var Switch = ReactRouter.Switch;
+
 var Nav = require('./Nav');
-var Clock = require('./Clock');
-var Duration = require('./Duration');
-var Color = require('./Color');
-var FirstForm = require('./FirstForm');
-var Questionnare = require('./Questionnare');
-var Reservations = require('./Reservations');
-var Money = require('./Money');
+var Questions = require('./Questions/Questions');
+var Home = require('./Home');
+
 
 class App extends React.Component {
   render () {
     return (
-      <div>
-        <Nav />
-        <Clock />
-        <Duration />
-        <Color />
-        <FirstForm />
-        <Questionnare />
-        <Reservations />
-        <Reservations />
-        <Reservations />
-        <Money />
-      </div>
+      <Router>
+        <div className="container">
+          <Nav />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/audits' component={Questions} />
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }

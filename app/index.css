@@ -37,3 +37,7 @@
 .moneyMan {
   margin: 100px 0 100px 0;
 }
+
+.active {
+  font-weight: bold;
+}
